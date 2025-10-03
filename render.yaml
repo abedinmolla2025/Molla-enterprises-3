@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: molla-invoice-generator
+    runtime: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        sync: false
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: REPLIT_DOMAINS
+        sync: false
+      - key: REPL_ID
+        sync: false
+      - key: ISSUER_URL
+        value: https://replit.com/oidc
+    autoDeploy: true

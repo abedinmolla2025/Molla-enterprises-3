@@ -1,0 +1,83 @@
+ Personal Invoice Generator Web App (MOLLA ENTERPRISES)
+
+### Company Branding
+- **Company Name:** MOLLA ENTERPRISES  
+- **Address:** BAGNAN, HOWRAH, WEST BENGAL 711303  
+- **Phone:** 9681766016  
+- **Email:** abedinmolla1@gmail.com  
+- **WhatsApp:** 9681766016  
+- **Fonts:**  
+  - **Primary Branding Font (Header/Company Name):** Lora (Premium, Elegant)  
+  - **Secondary Font (Body/Content):** Inter (Clean, Modern, Highly Readable)  
+- **Header Style:**  
+  - Left: Company Name + Details  
+  - Right: "TAX INVOICE" label, Invoice number, Date  
+  - Blue gradient accent line at the top (Blue Ocean style)  
+
+---
+
+### Tech Stack
+- **Frontend:** React (Vite + Tailwind CSS)  
+- **Backend:** Node.js + Express  
+- **Database:** MongoDB  
+- **PDF Generation:** html2canvas + jsPDF (frontend) and Puppeteer (backend)  
+- **Authentication:** Not required (single-user personal use)  
+
+---
+
+### Features
+
+#### 1. Dashboard
+- Home page shows MOLLA ENTERPRISES branding  
+- Navigation: Clients | Invoices | Settings  
+
+#### 2. Clients Module
+- Add, Edit, Delete, List clients  
+- Save client details in MongoDB  
+
+#### 3. Invoice Module
+- Create invoice:  
+  - **Auto-generated invoice number** (prefix "INV-", incremental: INV-0001, INV-0002, …)  
+  - Select client  
+  - Add items (Description, Qty, Rate, Tax, Discount)  
+  - **Tax field optional** (if blank or 0, no tax applied)  
+  - Auto-calculates subtotal, tax, discount, grand total  
+  - Default currency: INR (₹), with option for USD, EUR, GBP etc.  
+- Save invoice in MongoDB  
+- Live preview in BlueOcean-style design  
+- Download as PDF (frontend & backend options)  
+- Invoice status: Draft, Sent, Paid, Overdue  
+
+#### 4. Settings Module
+- Update default currency  
+- Add/Update payment options:  
+  - Bank transfer details (Bank Name, Account, IFSC)  
+  - UPI ID (text only, no QR)  
+- Payment details show in PDF footer  
+
+---
+
+### PDF Design
+- Professional, clean BlueOcean-style layout  
+- Header: MOLLA ENTERPRISES branding  
+- Client block (Invoice To + Ship To)  
+- Items table (QTY, ITEM, DESCRIPTION, UNIT PRICE, TAX [if applied], AMOUNT)  
+- Totals box aligned right  
+- Footer: Payment details (Bank + UPI ID as text) + Thank you note  
+
+---
+
+### Deployment
+- Frontend → Vercel  
+- Backend → Render  
+- `.env.example` with MongoDB URI and configs  
+- README with setup + deployment guide  
+
+---
+
+### Developer Notes
+- Include 1 sample client + 1 sample invoice (demo)  
+- Clean, well-commented code  
+- Fully responsive design  
+- Single-user (no authentication)  
+-
